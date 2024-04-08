@@ -18,7 +18,6 @@ phases:
     commands:
       - echo Building the Docker image...
       - docker build -t 803282840586.dkr.ecr.ap-southeast-2.amazonaws.com/hello-world:${IMAGE_TAG} .
-      - docker tag hello-world:latest 803282840586.dkr.ecr.ap-southeast-2.amazonaws.com/hello-world:${IMAGE_TAG}
   post_build:
     commands:
       - echo Build completed on `date`
