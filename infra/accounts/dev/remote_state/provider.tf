@@ -1,10 +1,9 @@
 provider "aws" {
-  region  = "us-east-1"
-  profile = "asmigar"
+  region  = "ap-southeast-2"
   default_tags {
     tags = {
-      Organisation = "asmigar"
-      Environment  = "dev"
+      Organisation = "kiki"
+      Environment  = "test"
     }
   }
 }
