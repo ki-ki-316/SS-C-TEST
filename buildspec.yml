@@ -1,10 +1,5 @@
-oversion: 0.2
+version: 0.2
 
-env: 
-  parameter-store: 
-   DOCKERHUB_USER: 'DOCKERHUB_USERNAME'
-   DOCKERHUB_PW: 'DOCKERHUB_PW'
-  ECR_URI_PREFIX: 'ECR_URI_PREFIX'
 phases:
   pre_build:
     commands:
