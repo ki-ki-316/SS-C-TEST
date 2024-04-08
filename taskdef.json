@@ -2,7 +2,7 @@
     "family": "hello-world",
     "networkMode": "awsvpc",
     "containerDefinitions": [
-            "logConfiguration": {
+          {  "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
                     "awslogs-group": "firelens-container-hello-world",
