@@ -16,15 +16,8 @@ phases:
       - echo ${IMAGE_REPO_NAME}
   build:
     commands:
-      - echo Starting to build ${ENV} # defined in Build environment
-      - echo Build started on `date`
-      - echo $DOCKERHUB_PW | docker login -u $DOCKERHUB_USER --password-stdin
-      - uname -a
-      - pwd
-      - ls -alh
-      - docker images
       - echo Building the Docker image...
-      - docker build -t hello-world:latest .
+      - docker build -t 803282840586.dkr.ecr.ap-southeast-2.amazonaws.com/hello-world:${IMAGE_TAG} .
       - docker tag hello-world:latest 803282840586.dkr.ecr.ap-southeast-2.amazonaws.com/hello-world:${IMAGE_TAG}
   post_build:
     commands:
