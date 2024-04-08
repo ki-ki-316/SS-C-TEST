@@ -2,20 +2,9 @@
     "family": "hello-world",
     "networkMode": "awsvpc",
     "containerDefinitions": [
-          {  "logConfiguration": {
-                "logDriver": "awslogs",
-                "options": {
-                    "awslogs-group": "firelens-container-hello-world",
-                    "awslogs-region": "ap-southeast-2",
-                    "awslogs-create-group": "true",
-                    "awslogs-stream-prefix": "firelens"
-                }
-            },
-            "memoryReservation": 50
-        },
         {
             "name": "hello-world",
-            "image": "{{image}}",
+            "image": "803282840586.dkr.ecr.ap-southeast-2.amazonaws.com/hello-world:{{imageID}}",
             "portMappings": [
                 {
                     "containerPort": 3000,
@@ -23,7 +12,15 @@
                     "protocol": "tcp"
                 }
             ],
-        
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-create-group": "true",
+                    "awslogs-group": "awslogs-hello-world",
+                    "awslogs-region": "ap-southeast-2",
+                    "awslogs-stream-prefix": "hello-world"
+                }
+            },
             "essential": true
         }
     ],
